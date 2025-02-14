@@ -1,1 +1,180 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Το Μυστήριο της Χρυσής Ψήφου</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #f0e6d2, #d4b996);
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+        h1, h2 {
+            color: #5a3e1b;
+        }
+        .section {
+            margin-bottom: 20px;
+            display: none;
+        }
+        .question {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .answers button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        .answers button:hover {
+            background: #0056b3;
+        }
+        .scene {
+            font-style: italic;
+            margin-bottom: 15px;
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .emoji {
+            font-size: 24px;
+        }
+    </style>
+    <script>
+        function showNextStep(stepId) {
+            document.getElementById(stepId).style.display = 'block';
+        }
+        function correctAnswer(stepId, nextStepId) {
+            alert('Σωστό! 🎉');
+            document.getElementById(stepId).style.display = 'none';
+            showNextStep(nextStepId);
+        }
+        function wrongAnswer() {
+            alert('Λάθος! 😕 Δοκίμασε ξανά.');
+        }
+    </script>
+</head>
+<body>
+    <h3>Δημιουργία: Παναγιώτης Δόμβρος 2025 (CC BY-NC)</h3>
+    <div class="container">
+        <h1>🔍 Το Μυστήριο της Χρυσής Ψήφου 🏛️</h1>
+        <p class="scene">Η Αθήνα είναι σε αναταραχή! 🏛️ Η Χρυσή Ψήφος, το μυστικό τεκμήριο που κατοχυρώνει τη δύναμη της Εκκλησίας του Δήμου, εξαφανίστηκε! 🔥 Ποιος τη στέρησε από τον λαό; 
+        Ως πολίτες και ερευνητές, έχετε αναλάβει να λύσετε το μυστήριο. Θα ακολουθήσετε τα στοιχεία, θα ανακρίνετε υπόπτους και θα αποκαλύψετε την αλήθεια!</p>
 
+        <!-- Βήμα 1 -->
+        <div class="section" id="step1">
+            <h2>Στοιχείο 1: Η Εκκλησία του Δήμου 🏛️</h2>
+            <p class="question">Ποιος ήταν ο ρόλος της Εκκλησίας του Δήμου στην αρχαία Αθήνα;</p>
+            <div class="answers">
+                <button onclick="correctAnswer('step1', 'step2')">Έπαιρνε αποφάσεις για τους νόμους και την πολιτική</button>
+                <button onclick="wrongAnswer()">Διοικούσε τον στρατό</button>
+                <button onclick="wrongAnswer()">Εκτελούσε θρησκευτικές τελετές</button>
+            </div>
+        </div>
+
+        <!-- Βήμα 2 -->
+        <div class="section" id="step2">
+            <h2>Στοιχείο 2: Ο Άρειος Πάγος ⚖️</h2>
+            <p class="question">Ποιος ήταν ο ρόλος του Άρειου Πάγου πριν τις μεταρρυθμίσεις του Εφιάλτη;</p>
+            <div class="answers">
+                <button onclick="wrongAnswer()">Διοικούσε τον στρατό</button>
+                <button onclick="correctAnswer('step2', 'step3')">Ασκούσε δικαστική και πολιτική εξουσία</button>
+                <button onclick="wrongAnswer()">Εκτελούσε θρησκευτικές τελετές</button>
+            </div>
+        </div>
+
+        <!-- Βήμα 3 -->
+        <div class="section" id="step3">
+            <h2>Στοιχείο 3: Η Βουλή των Πεντακοσίων 📜</h2>
+            <p class="question">Ποιος ήταν ο ρόλος της Βουλής των Πεντακοσίων;</p>
+            <div class="answers">
+                <button onclick="wrongAnswer()">Διοικούσε τον στρατό</button>
+                <button onclick="correctAnswer('step3', 'step4')">Προετοίμαζε τα κείμενα των νόμων</button>
+                <button onclick="wrongAnswer()">Εκτελούσε θρησκευτικές τελετές</button>
+            </div>
+        </div>
+
+        <!-- Βήμα 4 -->
+        <div class="section" id="step4">
+            <h2>Στοιχείο 4: Οι Στρατηγοί ⚔️</h2>
+            <p class="question">Ποιος ήταν ο ρόλος των στρατηγών στην Αθήνα;</p>
+            <div class="answers">
+                <button onclick="correctAnswer('step4', 'step5')">Διοικούσαν τον στρατό και σχεδίαζαν εξωτερική πολιτική</button>
+                <button onclick="wrongAnswer()">Ασκούσαν δικαστική εξουσία</button>
+                <button onclick="wrongAnswer()">Επέβαλλαν φόρους</button>
+            </div>
+        </div>
+
+        <!-- Βήμα 5 -->
+        <div class="section" id="step5">
+            <h2>Στοιχείο 5: Η Ηλιαία 🏛️</h2>
+            <p class="question">Ποιος ήταν ο ρόλος της Ηλιαίας;</p>
+            <div class="answers">
+                <button onclick="wrongAnswer()">Διοικούσε τον στρατό</button>
+                <button onclick="correctAnswer('step5', 'step6')">Ασκούσε δικαστική εξουσία</button>
+                <button onclick="wrongAnswer()">Εκτελούσε θρησκευτικές τελετές</button>
+            </div>
+        </div>
+
+        <!-- Βήμα 6 -->
+        <div class="section" id="step6">
+            <h2>Στοιχείο 6: Μαρτυρία στην Αγορά 🏛️</h2>
+            <p class="question">Ποιος ήταν ο ρόλος των στρατηγών στην Αθήνα;</p>
+            <div class="answers">
+                <button onclick="correctAnswer('step6', 'step7')">Διοικούσαν τον στρατό και σχεδίαζαν εξωτερική πολιτική</button>
+                <button onclick="wrongAnswer()">Ασκούσαν δικαστική εξουσία</button>
+                <button onclick="wrongAnswer()">Επέβαλλαν φόρους</button>
+            </div>
+        </div>
+
+        <!-- Βήμα 7 -->
+        <div class="section" id="step7">
+            <h2>Στοιχείο 7: Η Αποκάλυψη στο Θέατρο 🎭</h2>
+            <p class="question">Ποια ήταν η σημασία των θεωρικών;</p>
+            <div class="answers">
+                <button onclick="wrongAnswer()">Φόρος στους ξένους εμπόρους</button>
+                <button onclick="correctAnswer('step7', 'step8')">Επίδομα για τους φτωχούς ώστε να παρακολουθούν θέατρο</button>
+                <button onclick="wrongAnswer()">Αμοιβή στρατηγών</button>
+            </div>
+        </div>
+
+        <!-- Βήμα 8 -->
+        <div class="section" id="step8">
+            <h2>Στοιχείο 8: Η Τελική Απόφαση ⚖️</h2>
+            <p class="question">Ποιος είχε το μεγαλύτερο κίνητρο να κλέψει τη Χρυσή Ψήφο;</p>
+            <div class="answers">
+                <button onclick="wrongAnswer()">Ένας στρατηγός που ήθελε περισσότερη εξουσία</button>
+                <button onclick="wrongAnswer()">Ένας μέτοικος που ήθελε δικαιώματα</button>
+                <button onclick="correctAnswer('step8', 'final')">Ένας αριστοκράτης που ήθελε να αποκαταστήσει την εξουσία του Άρειου Πάγου</button>
+            </div>
+        </div>
+
+        <!-- Τελικό Βήμα -->
+        <div class="section" id="final">
+            <h2>🏛️ Η Δημοκρατία Σώθηκε! 🎉</h2>
+            <p>Μπράβο! Καταφέρατε να αποκαλύψετε την αλήθεια! Η Χρυσή Ψήφος επιστρέφει στην Εκκλησία του Δήμου και η Δημοκρατία παραμένει δυνατή! 🏛️⚖️</p>
+        </div>
+    </div>
+
+    <script>
+        // Εμφάνιση του πρώτου βήματος κατά τη φόρτωση της σελίδας
+        window.onload = function() {
+            showNextStep('step1');
+        };
+    </script>
+</body>
+</html>
