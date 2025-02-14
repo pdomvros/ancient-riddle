@@ -77,13 +77,87 @@
         function showNextStep(stepId) {
             document.getElementById(stepId).style.display = 'block';
         }
+
         function correctAnswer(stepId, nextStepId) {
-            alert('Σωστό! 🎉');
+            // Άνοιγμα μικρού pop-up παραθύρου
+            const popup = window.open("", "Popup", "width=400,height=300,left=100,top=100");
+            popup.document.write(`
+                <html>
+                    <head>
+                        <title>Σωστή Απάντηση!</title>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                background: #1a1a1a;
+                                color: #00ff00;
+                                text-align: center;
+                                padding: 50px;
+                            }
+                            h1 {
+                                font-size: 24px;
+                            }
+                            button {
+                                margin-top: 20px;
+                                padding: 10px 20px;
+                                background: #00ff00;
+                                color: #1a1a1a;
+                                border: none;
+                                border-radius: 5px;
+                                cursor: pointer;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>Σωστή Απάντηση! 🎉</h1>
+                        <p>Συνεχίστε στο παιχνίδι για να λύσετε το μυστήριο!</p>
+                        <button onclick="window.close()">Κλείσιμο</button>
+                    </body>
+                </html>
+            `);
+            popup.document.close();
+
+            // Εμφάνιση του επόμενου βήματος
             document.getElementById(stepId).style.display = 'none';
             showNextStep(nextStepId);
         }
+
         function wrongAnswer() {
-            alert('Λάθος! 😕 Δοκίμασε ξανά.');
+            // Άνοιγμα μικρού pop-up παραθύρου
+            const popup = window.open("", "Popup", "width=400,height=300,left=100,top=100");
+            popup.document.write(`
+                <html>
+                    <head>
+                        <title>Λάθος Απάντηση!</title>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                background: #1a1a1a;
+                                color: #ff0000;
+                                text-align: center;
+                                padding: 50px;
+                            }
+                            h1 {
+                                font-size: 24px;
+                            }
+                            button {
+                                margin-top: 20px;
+                                padding: 10px 20px;
+                                background: #ff0000;
+                                color: #1a1a1a;
+                                border: none;
+                                border-radius: 5px;
+                                cursor: pointer;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>Λάθος Απάντηση! 😕</h1>
+                        <p>Δοκιμάστε ξανά!</p>
+                        <button onclick="window.close()">Κλείσιμο</button>
+                    </body>
+                </html>
+            `);
+            popup.document.close();
         }
     </script>
 </head>
