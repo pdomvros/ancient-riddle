@@ -7,20 +7,22 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #f0e6d2, #d4b996);
+            background: linear-gradient(to bottom, #ffcc00, #ff6600); /* Έντονο κίτρινο-πορτοκαλί */
             text-align: center;
             padding: 20px;
+            color: #333;
         }
         .container {
             max-width: 800px;
             margin: auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.9); /* Λευκό με διαφάνεια */
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
         }
         h1, h2 {
             color: #5a3e1b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
         .section {
             margin-bottom: 20px;
@@ -29,29 +31,46 @@
         .question {
             font-weight: bold;
             margin-top: 10px;
-            font-size: 18px;
+            font-size: 20px;
+            color: #5a3e1b;
         }
         .answers button {
-            margin: 5px;
-            padding: 10px;
+            margin: 10px;
+            padding: 15px 20px;
             cursor: pointer;
             border: none;
-            background: #007bff;
+            background: #007bff; /* Μπλε */
             color: white;
-            border-radius: 5px;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: background 0.3s ease;
         }
         .answers button:hover {
-            background: #0056b3;
+            background: #0056b3; /* Σκούρο μπλε */
         }
         .scene {
             font-style: italic;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             background: #fff3cd;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            color: #5a3e1b;
         }
         .emoji {
-            font-size: 24px;
+            font-size: 28px;
+            margin: 5px;
+        }
+        .feedback {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
         }
     </style>
     <script>
@@ -72,17 +91,17 @@
     <h3>Δημιουργία: Παναγιώτης Δόμβρος 2025 (CC BY-NC)</h3>
     <div class="container">
         <h1>🔍 Το Μυστήριο της Χρυσής Ψήφου 🏛️</h1>
-        <p class="scene">Η Αθήνα είναι σε αναταραχή! 🏛️ Η Χρυσή Ψήφος, το μυστικό τεκμήριο που κατοχυρώνει τη δύναμη της Εκκλησίας του Δήμου, εξαφανίστηκε! 🔥 Ποιος τη στέρησε από τον λαό; 
-        Ως πολίτες και ερευνητές, έχετε αναλάβει να λύσετε το μυστήριο. Θα ακολουθήσετε τα στοιχεία, θα ανακρίνετε υπόπτους και θα αποκαλύψετε την αλήθεια!</p>
+        <p class="scene">Η Αθήνα είναι σε αναταραχή! 🏛️🔥 Η Χρυσή Ψήφος, το μυστικό τεκμήριο που κατοχυρώνει τη δύναμη της Εκκλησίας του Δήμου, εξαφανίστηκε! Ποιος τη στέρησε από τον λαό; 
+        Ως πολίτες και ερευνητές, έχετε αναλάβει να λύσετε το μυστήριο. Θα ακολουθήσετε τα στοιχεία, θα ανακρίνετε υπόπτους και θα αποκαλύψετε την αλήθεια! 🕵️‍♂️🔎</p>
 
         <!-- Βήμα 1 -->
         <div class="section" id="step1">
             <h2>Στοιχείο 1: Η Εκκλησία του Δήμου 🏛️</h2>
             <p class="question">Ποιος ήταν ο ρόλος της Εκκλησίας του Δήμου στην αρχαία Αθήνα;</p>
             <div class="answers">
-                <button onclick="correctAnswer('step1', 'step2')">Έπαιρνε αποφάσεις για τους νόμους και την πολιτική</button>
-                <button onclick="wrongAnswer()">Διοικούσε τον στρατό</button>
-                <button onclick="wrongAnswer()">Εκτελούσε θρησκευτικές τελετές</button>
+                <button onclick="correctAnswer('step1', 'step2')">Έπαιρνε αποφάσεις για τους νόμους και την πολιτική 📜</button>
+                <button onclick="wrongAnswer()">Διοικούσε τον στρατό ⚔️</button>
+                <button onclick="wrongAnswer()">Εκτελούσε θρησκευτικές τελετές 🙏</button>
             </div>
         </div>
 
@@ -91,9 +110,9 @@
             <h2>Στοιχείο 2: Ο Άρειος Πάγος ⚖️</h2>
             <p class="question">Ποιος ήταν ο ρόλος του Άρειου Πάγου πριν τις μεταρρυθμίσεις του Εφιάλτη;</p>
             <div class="answers">
-                <button onclick="wrongAnswer()">Διοικούσε τον στρατό</button>
-                <button onclick="correctAnswer('step2', 'step3')">Ασκούσε δικαστική και πολιτική εξουσία</button>
-                <button onclick="wrongAnswer()">Εκτελούσε θρησκευτικές τελετές</button>
+                <button onclick="wrongAnswer()">Διοικούσε τον στρατό ⚔️</button>
+                <button onclick="correctAnswer('step2', 'step3')">Ασκούσε δικαστική και πολιτική εξουσία 🏛️</button>
+                <button onclick="wrongAnswer()">Εκτελούσε θρησκευτικές τελετές 🙏</button>
             </div>
         </div>
 
@@ -102,9 +121,9 @@
             <h2>Στοιχείο 3: Η Βουλή των Πεντακοσίων 📜</h2>
             <p class="question">Ποιος ήταν ο ρόλος της Βουλής των Πεντακοσίων;</p>
             <div class="answers">
-                <button onclick="wrongAnswer()">Διοικούσε τον στρατό</button>
-                <button onclick="correctAnswer('step3', 'step4')">Προετοίμαζε τα κείμενα των νόμων</button>
-                <button onclick="wrongAnswer()">Εκτελούσε θρησκευτικές τελετές</button>
+                <button onclick="wrongAnswer()">Διοικούσε τον στρατό ⚔️</button>
+                <button onclick="correctAnswer('step3', 'step4')">Προετοίμαζε τα κείμενα των νόμων 📜</button>
+                <button onclick="wrongAnswer()">Εκτελούσε θρησκευτικές τελετές 🙏</button>
             </div>
         </div>
 
@@ -113,9 +132,9 @@
             <h2>Στοιχείο 4: Οι Στρατηγοί ⚔️</h2>
             <p class="question">Ποιος ήταν ο ρόλος των στρατηγών στην Αθήνα;</p>
             <div class="answers">
-                <button onclick="correctAnswer('step4', 'step5')">Διοικούσαν τον στρατό και σχεδίαζαν εξωτερική πολιτική</button>
-                <button onclick="wrongAnswer()">Ασκούσαν δικαστική εξουσία</button>
-                <button onclick="wrongAnswer()">Επέβαλλαν φόρους</button>
+                <button onclick="correctAnswer('step4', 'step5')">Διοικούσαν τον στρατό και σχεδίαζαν εξωτερική πολιτική 🌍</button>
+                <button onclick="wrongAnswer()">Ασκούσαν δικαστική εξουσία ⚖️</button>
+                <button onclick="wrongAnswer()">Επέβαλλαν φόρους 💰</button>
             </div>
         </div>
 
@@ -124,9 +143,9 @@
             <h2>Στοιχείο 5: Η Ηλιαία 🏛️</h2>
             <p class="question">Ποιος ήταν ο ρόλος της Ηλιαίας;</p>
             <div class="answers">
-                <button onclick="wrongAnswer()">Διοικούσε τον στρατό</button>
-                <button onclick="correctAnswer('step5', 'step6')">Ασκούσε δικαστική εξουσία</button>
-                <button onclick="wrongAnswer()">Εκτελούσε θρησκευτικές τελετές</button>
+                <button onclick="wrongAnswer()">Διοικούσε τον στρατό ⚔️</button>
+                <button onclick="correctAnswer('step5', 'step6')">Ασκούσε δικαστική εξουσία ⚖️</button>
+                <button onclick="wrongAnswer()">Εκτελούσε θρησκευτικές τελετές 🙏</button>
             </div>
         </div>
 
@@ -135,9 +154,9 @@
             <h2>Στοιχείο 6: Μαρτυρία στην Αγορά 🏛️</h2>
             <p class="question">Ποιος ήταν ο ρόλος των στρατηγών στην Αθήνα;</p>
             <div class="answers">
-                <button onclick="correctAnswer('step6', 'step7')">Διοικούσαν τον στρατό και σχεδίαζαν εξωτερική πολιτική</button>
-                <button onclick="wrongAnswer()">Ασκούσαν δικαστική εξουσία</button>
-                <button onclick="wrongAnswer()">Επέβαλλαν φόρους</button>
+                <button onclick="correctAnswer('step6', 'step7')">Διοικούσαν τον στρατό και σχεδίαζαν εξωτερική πολιτική 🌍</button>
+                <button onclick="wrongAnswer()">Ασκούσαν δικαστική εξουσία ⚖️</button>
+                <button onclick="wrongAnswer()">Επέβαλλαν φόρους 💰</button>
             </div>
         </div>
 
@@ -146,9 +165,9 @@
             <h2>Στοιχείο 7: Η Αποκάλυψη στο Θέατρο 🎭</h2>
             <p class="question">Ποια ήταν η σημασία των θεωρικών;</p>
             <div class="answers">
-                <button onclick="wrongAnswer()">Φόρος στους ξένους εμπόρους</button>
-                <button onclick="correctAnswer('step7', 'step8')">Επίδομα για τους φτωχούς ώστε να παρακολουθούν θέατρο</button>
-                <button onclick="wrongAnswer()">Αμοιβή στρατηγών</button>
+                <button onclick="wrongAnswer()">Φόρος στους ξένους εμπόρους 💰</button>
+                <button onclick="correctAnswer('step7', 'step8')">Επίδομα για τους φτωχούς ώστε να παρακολουθούν θέατρο 🎟️</button>
+                <button onclick="wrongAnswer()">Αμοιβή στρατηγών ⚔️</button>
             </div>
         </div>
 
@@ -157,9 +176,9 @@
             <h2>Στοιχείο 8: Η Τελική Απόφαση ⚖️</h2>
             <p class="question">Ποιος είχε το μεγαλύτερο κίνητρο να κλέψει τη Χρυσή Ψήφο;</p>
             <div class="answers">
-                <button onclick="wrongAnswer()">Ένας στρατηγός που ήθελε περισσότερη εξουσία</button>
-                <button onclick="wrongAnswer()">Ένας μέτοικος που ήθελε δικαιώματα</button>
-                <button onclick="correctAnswer('step8', 'final')">Ένας αριστοκράτης που ήθελε να αποκαταστήσει την εξουσία του Άρειου Πάγου</button>
+                <button onclick="wrongAnswer()">Ένας στρατηγός που ήθελε περισσότερη εξουσία ⚔️</button>
+                <button onclick="wrongAnswer()">Ένας μέτοικος που ήθελε δικαιώματα 🏛️</button>
+                <button onclick="correctAnswer('step8', 'final')">Ένας αριστοκράτης που ήθελε να αποκαταστήσει την εξουσία του Άρειου Πάγου 👑</button>
             </div>
         </div>
 
